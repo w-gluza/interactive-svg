@@ -9,3 +9,14 @@ async function loadSvg() {
 
     document.querySelector("#layers").innerHTML = mySvg;
 }
+
+document.querySelector("#layers").addEventListener("mouseover", showElement);
+document.querySelector("#layers").addEventListener("mouseout", hideElement);
+
+function showElement(){
+document.querySelector("#mac").setAttribute('data-content', 'Updated text');
+}
+
+function hideElement(){
+    document.querySelector("#mac").setAttribute('data-content', '');
+}
