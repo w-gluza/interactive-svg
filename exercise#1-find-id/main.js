@@ -10,22 +10,22 @@ async function loadSvg() {
     document.querySelector("#layers").innerHTML = mySvg;
 }
 
-// document.querySelector("#layers").addEventListener("mouseover", showElement);
-// document.querySelector("#layers").addEventListener("mouseout", hideElement);
 
-// function showElement(){
-// document.querySelector("#mac").setAttribute('data-content', 'Updated text');
-// }
+document.querySelector("#layers").addEventListener("click", showElement);
+document.querySelector("#layers").addEventListener("mouseout", hideElement);
 
-// function hideElement(){
-//     document.querySelector("#mac").setAttribute('data-content', '');
-// }
+function showElement(event) {
 
-function bikeFunction() {
-    var x = document.querySelector("#bike");
-    if (x.innerHTML === "") {
-        x.innerHTML = "BIKE BIKE BIKE";
-    } else {
-        x.innerHTML = "";
-    }
+
+    let id = event.target.getAttribute("id");
+
+    document.querySelector("#" + event.target.id + "Text").style.display="block"
+    
+
+}
+
+function hideElement(event) {
+
+    let id = event.target.getAttribute("id");
+    document.querySelector("#" + event.target.id + "Text").style.display="none"
 }

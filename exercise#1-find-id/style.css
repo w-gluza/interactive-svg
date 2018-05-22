@@ -2,15 +2,3 @@
     height: 100vh;
     width: auto;
 }
-
-#mac::after {
-    content: attr(data-content);
-  }
-
-#phone::after {
-    content: attr(data-content);
-  }
-
-#bike::after {
-    content: attr(data-content);
-  }
