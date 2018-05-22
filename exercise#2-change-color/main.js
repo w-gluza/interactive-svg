@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", loadSvg);
 
-// const orgColor;
-
 async function loadSvg() {
     // Load SVG
 
-    let svgData = await fetch ("pie.svg");
+    let svgData = await fetch("pie.svg");
     let mySvg = await svgData.text();
 
     document.querySelector("#pie").innerHTML = mySvg;
@@ -13,13 +11,28 @@ async function loadSvg() {
 }
 
 document.querySelector("#pie").addEventListener("mouseover", showElement);
-function showElement(){
-    
-    // document.querySelector("#one").setAttribute("fill", "#903");
+document.querySelector("#pie").addEventListener("mouseout", hideElement);
+
+// a Map of oryginal colours
+const original_colours = {};
+let backed_up_colour = undefined;
+
+function showElement(event) {
+
 
     let id = event.target.getAttribute("id");
-    orgColor = document.querySelector("#"+id).getAttribute("fill");
-    console.log(orgColor); 
+    orgColor = document.querySelector("#" + id).getAttribute("fill");
 
+    backed_up_colour = orgColor;
+
+    document.querySelector("#" + id).setAttribute("fill", "#f2323");
+
+    console.log(orgColor);
+}
+
+function hideElement(event) {
+
+    let id = event.target.getAttribute("id");
+    document.querySelector("#" + id).setAttribute("fill", backed_up_colour)
 
 }
