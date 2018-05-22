@@ -1,0 +1,8 @@
+svg {
+    height: 100vh;
+    width: auto;
+}
+
+svg:hover #map { 
+    fill: darkslateblue; 
+}
